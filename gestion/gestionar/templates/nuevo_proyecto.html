@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Nuevo Proyecto{% endblock %}
+
+{% block content %}
+<h1>Crear Nuevo Proyecto</h1>
+<form method="post" action="/proyectos/nuevo/">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" id="nombre" name="nombre" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label for="descripcion" class="form-label">Descripción</label>
+        <textarea id="descripcion" name="descripcion" class="form-control"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Crear</button>
+</form>
+{% endblock %}

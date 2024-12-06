@@ -1,0 +1,10 @@
+<h1>Mis Reservas</h1>
+<ul>
+    {% for reserva in reservas %}
+        <li>Vehículo: {{ reserva.vehiculo.marca }} {{ reserva.vehiculo.modelo }} - 
+            Fecha Inicio: {{ reserva.fecha_inicio }} - 
+            Fecha Fin: {{ reserva.fecha_fin }} - 
+            Precio: ${{ reserva.precio }}
+        </li>
+    {% endfor %}
+</ul>

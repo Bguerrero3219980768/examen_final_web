@@ -1,0 +1,10 @@
+<h1>Carrito</h1>
+<ul>
+    {% for item in productos %}
+        <li>{{ item.producto.descripcion }} - Cantidad: {{ item.cantidad }} - Subtotal: ${{ item.producto.precio * item.cantidad }}
+            <a href="{% url 'eliminar_del_carrito' item.producto.id %}">Eliminar</a>
+        </li>
+    {% endfor %}
+</ul>
+<h2>Total: ${{ total }}</h2>
+<a href="{% url 'listar_productos' %}">Seguir comprando</a>

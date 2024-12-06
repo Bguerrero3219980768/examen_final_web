@@ -1,0 +1,16 @@
+<h1>Detalles del Vehículo</h1>
+<p>Marca: {{ vehiculo.marca }}</p>
+<p>Modelo: {{ vehiculo.modelo }}</p>
+<p>Año: {{ vehiculo.anio }}</p>
+<p>Capacidad: {{ vehiculo.capacidad }}</p>
+<p>Disponible: {{ "Sí" if vehiculo.disponible else "No" }}</p>
+
+<h2>Realizar Reserva</h2>
+<form method="post">
+    {% csrf_token %}
+    <label for="fecha_inicio">Fecha de Inicio:</label>
+    <input type="date" id="fecha_inicio" name="fecha_inicio" required>
+    <label for="fecha_fin">Fecha de Fin:</label>
+    <input type="date" id="fecha_fin" name="fecha_fin" required>
+    <button type="submit">Reservar</button>
+</form>

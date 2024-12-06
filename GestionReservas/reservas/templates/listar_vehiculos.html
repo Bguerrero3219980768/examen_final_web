@@ -1,0 +1,8 @@
+<h1>Vehículos Disponibles</h1>
+<ul>
+    {% for vehiculo in vehiculos %}
+        <li>{{ vehiculo.marca }} {{ vehiculo.modelo }} ({{ vehiculo.anio }}) - Capacidad: {{ vehiculo.capacidad }}
+            <a href="{% url 'detalle_vehiculo' vehiculo.id %}">Ver Detalles</a>
+        </li>
+    {% endfor %}
+</ul>
